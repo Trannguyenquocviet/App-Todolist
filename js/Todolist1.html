@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+
+:root {
+  --color-white: #f3f3f3;
+  --color-darkblue: #1b1b32;
+  --color-darkblue-alpha: rgba(27, 27, 50, 0.8);
+  --color-green: #37af65;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-white);
+  margin: 0;
+}
+
+/* mobile friendly alternative to using background-attachment: fixed */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--color-darkblue);
+  background-image: linear-gradient(
+      115deg,
+      rgba(58, 58, 158, 0.8),
+      rgba(136, 136, 206, 0.7)
+    ),
+    url(IT.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+h1 {
+  font-weight: 400;
+  line-height: 1.2;
+  font-size: 100px;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+h1,
+p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+
+
+.container {
+  width: 100%;
+  margin: 3.125rem auto 0 auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+
+
+.description {
+  font-style: italic;
+  font-weight: 200;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+
+
+.text-center {
+  text-align: center;
+}
+
+/* form */
+
+form {
+  background: var(--color-darkblue-alpha);
+  padding: 2.5rem 0.625rem;
+  border-radius: 0.25rem;
+}
+
+@media (min-width: 480px) {
+  form {
+    padding: 2.5rem;
+  }
+}
+
+
+.form-control{
+    display: flex;
+}
+#content{
+    padding: 5px;
+    height: 45px;
+    width: 500px;
+    resize: none;
+}
+.form-control button{
+    height: 45px;
+    width: 100px;
+    line-height: 45px;
+    border: none;
+    padding: 8px;
+    background: Blue;
+    text-align: center;
+    width: 100px;
+    margin-left: 10px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+#list-task{
+    width: 600px;
+}
+#list-task{
+    text-transform: uppercase;
+    font-size: 18px;
+}
+#list-task ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+#list-task ul li{
+    display: flex;
+    background: pink;
+    padding: 7px;
+    margin-bottom: 7px;
+    justify-content: space-around;
+}
+
+#list-task ul li div{
+    width: 200%;
+}
+#list-task ul li a{
+    text-decoration: none;
+    display: block;
+    margin-right: 8px;
+    color:rgba(58, 58, 158, 0.8);
+    padding: 5px;
+    border-radius: 5px;
+}
+#list-task ul li a:nth-of-type(2){
+    background: orangered;
+}
+    </style>
+  
+  
+  
+  <head>
+    <title>React App</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 id="title" class="text-center">THINGS TO DO</h1>
+        <p id="description" class="description text-center">
+            Please complete the tasks you add to this list
+        </p>
+      </header>
+      <form id="survey-form">
+        
+        <div class="form-control">
+            <textarea placeholder="Your Task Name..." class="content" id="content"></textarea>
+            <button>Add Task</button>
+        </div>
+        
+        <div id="list-task">
+            <h4>YOUR TO-DO LIST:</h4>
+            <div id="result">
+                <p>No job yet!</p>
+            </div>
+        </div>
+      </form>
+    </div>
+    
+
+    <script src="./js/reactapp.js"></script>
+  </body>
+</html>
+
+            
+
+
